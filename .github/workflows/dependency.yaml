@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PAT }}
           script: |
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -27,4 +27,5 @@ jobs:
             by the YJSP team should be rejected, as well as those that are not \
             actively maintained.`
             });
+
 
